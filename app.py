@@ -12,7 +12,8 @@ def index():
 
 @app.route('/success/<name>')
 def success(name):
-    return 'welcome %s' % name
+    # return 'welcome %s' % name
+    return render_template('login.html', tips=name*1000)
 
 
 @app.route('/login', methods=['POST', 'GET'])

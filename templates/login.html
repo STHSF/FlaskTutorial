@@ -6,15 +6,46 @@
 </head>
 <body>
 
-    <h1>登录测试</h1>
+    <h1>搜索测试</h1>
+    <p>测试表单搜索填写，并且输入到当前页面</p>
 
-    <p>登录测试</p>
+    <span style="position: absolute; top: 100px; left: 10px;">
 
     <form action = "/login" method = "POST">
-         <p>Enter Name:</p>
-         <p><input type = "text" name = "nm" /></p>
-         <p><input type = "submit" value = "submit" /></p>
+        <p>Enter Name:</p>
+        <input type="text"  rows="4" cols="60" placeholder="请输入...."
+                   name='nm' style="height:38px;width:480px;">
+        <button type="submit" class="search-submit" style="height:35px;width:60px;">
+            提交
+        </button>
+
     </form>
+    </span>
+
+    <span style="position: absolute; top: 210px; left: 10px;">
+    <p>运行结果：</p>
+    </span>
+
+{#    <h3>{{ tips }}</h3>#}
+
+{#    <span style="position: absolute; top: 400px; left: 200px;">#}
+{#    <h3>{{ tips }}</h3>#}
+{#    </span>#}
+
+    <span style="position: absolute; top: 250px; left: 10px;">
+    <label for="test1"></label>
+    <textarea id="test1" style="width:600px; height: 200px;border: 1px #ccc solid;">
+        {{ tips }}
+    </textarea>
+    </span>
+
+
+{#    <div id="test2" style="width:300px; height: 200px;border: 1px #ccc solid; overflow-y: scroll;float: left;">#}
+{#        #}
+{#    </div>#}
+{##}
+{#    <input type="button" value="Start" onclick="start();">#}
+{#    <input type="button" value="Stop" onclick="stop();">#}
 
 </body>
 </html>
