@@ -34,8 +34,8 @@ def setcookie():
     if request.method == 'POST':
         user = request.form['nm']
 
-    # resp = make_response(render_template('readcookie.html'))
-    resp = make_response('sucess')
+    # resp = make_response(('sucess'))
+    resp = make_response(render_template('index.html', status='login sucess'))
     resp.set_cookie('userID', user)
 
     return resp
@@ -50,9 +50,8 @@ def getcookie():
 @app.route("/delete_cookie")
 def delete_cookie():
     """
-        删除cookie，通过delete_cookie()的方式，
-        里面是cookie的名字
-        这里的删除只是让cookie过期，并不是直接删除cookie
+    删除cookie，通过delete_cookie()的方式，里面是cookie的名字
+    这里的删除只是让cookie过期，并不是直接删除cookie
     """
     resp = make_response("del success")
     resp.delete_cookie("userID")
@@ -85,6 +84,10 @@ def send_post(name):
 
 @app.route('/search', methods=['POST', 'GET'])
 def search():
+    """
+    搜索接口，在搜索框中填入相关内容， 然后返回计算的结果
+    :return:
+    """
     if request.method == 'POST':
         name = request.form['username'].strip()  # strip去除前后空格
     else:
