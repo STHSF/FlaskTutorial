@@ -29,26 +29,37 @@ def login():
         return render_template('login.html')
 
 
-@app.route('/setcookie', methods=['POST', 'GET'])
+@app.route('/set_cookie', methods=['POST', 'GET'])
 def setcookie():
     if request.method == 'POST':
         user = request.form['nm']
 
-    resp = make_response(render_template('readcookie.html'))
+    # resp = make_response(render_template('readcookie.html'))
+    resp = make_response('sucess')
     resp.set_cookie('userID', user)
 
     return resp
 
 
-@app.route('/getcookie')
+@app.route('/get_cookie')
 def getcookie():
     name = request.cookies.get('userID')
     return '<h1>welcome ' + name + '</h1>'
 
 
+@app.route("/delete_cookie")
+def delete_cookie():
+    """
+        删除cookie，通过delete_cookie()的方式，
+        里面是cookie的名字
+        这里的删除只是让cookie过期，并不是直接删除cookie
+    """
+    resp = make_response("del success")
+    resp.delete_cookie("userID")
+
+
 def send_post(name):
     # 构造数据
-
     res = {
         'eid': '20180601',
         'type': None,
