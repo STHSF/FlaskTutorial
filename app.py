@@ -36,6 +36,7 @@ def setcookie():
 
     # resp = make_response(('sucess'))
     resp = make_response(render_template('index.html', status='login sucess'))
+    # resp = make_response(render_template('login.html', status='login sucess'))
     resp.set_cookie('userID', user)
 
     return resp
