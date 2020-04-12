@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search</title>
+</head>
+
+<body bgcolor="DodgerBlue">
+    <div style="text-align:center;color:#F0F8FF">
+        <br/><br/><br/>
+        <font face="宋体" size="+5">摇号结果查询</font><br/>
+        <br/><br/>
+        <form action ='/search' method='post'>
+            <input type="txt"  rows="4" cols="60" placeholder="请输入姓名或编码...."
+                   name='username' style="height:38px;width:480px;">
+            <button type="submit" class="search-submit" style="height:35px;width:60px;">查询</button>
+        </form>
+        <br/><br/>
+        {% for num in nums %}
+            <tr>
+                <td>{{ num.date }}</td>
+                <td>{{ num.name }}</td>
+                <td>{{ num.code }}</td>
+                <br/>
+            </tr>
+        {% endfor %}
+        <h3>{{ tips }}</h3>
+    </div>
+</body>
+</html>
