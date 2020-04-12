@@ -40,7 +40,7 @@ def setcookie():
 @app.route('/getcookie')
 def getcookie():
     name = request.cookies.get('userID')
-    return '<h1>welcome & plus; name & plus; </h1>'
+    return '<h1>welcome ' + name + '</h1>'
 
 
 if __name__ == '__main__':
